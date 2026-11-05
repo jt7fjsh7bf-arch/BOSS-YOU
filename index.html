@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BOSS YOU</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+
+ margin:0;
+
+ font-family:Arial,sans-serif;
+
+ background:#0b1020;
+
+ color:white;
+
+}
+
+header{
+
+ background:#151d32;
+
+ padding:22px;
+
+ text-align:center;
+
+ border-bottom:2px solid #805cff;
+
+}
+
+header h1{color:#a78bfa;margin:0}
+
+header p{color:#cbd5e1}
+
+main{padding:20px;max-width:750px;margin:auto}
+
+.card{
+
+ background:#18233b;
+
+ padding:20px;
+
+ border-radius:15px;
+
+ margin-bottom:18px;
+
+ border:1px solid #34415e;
+
+}
+
+h2{color:#a78bfa}
+
+button{
+
+ background:#805cff;
+
+ color:white;
+
+ border:0;
+
+ padding:13px;
+
+ border-radius:9px;
+
+ width:100%;
+
+ font-size:16px;
+
+}
+
+input{
+
+ width:100%;
+
+ padding:13px;
+
+ margin:10px 0;
+
+ border-radius:8px;
+
+ border:1px solid #64748b;
+
+ background:#0b1020;
+
+ color:white;
+
+}
+
+.result{color:#a78bfa;font-weight:bold}
+
+footer{text-align:center;color:#94a3b8;padding:20px}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>👑 BOSS YOU</h1>
+
+<p>Le laboratoire des statistiques et probabilités</p>
+
+</header>
+
+<main>
+
+<div class="card">
+
+<h2>Bienvenue sur BOSS YOU</h2>
+
+<p>Découvre les statistiques, les probabilités et les analyses de données.</p>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Calculateur de probabilités</h2>
+
+<p>Nombre de résultats favorables :</p>
+
+<input id="favorable" type="number" min="0" placeholder="Exemple : 5">
+
+<p>Nombre total de résultats :</p>
+
+<input id="total" type="number" min="1" placeholder="Exemple : 10">
+
+<button onclick="calculer()">Calculer</button>
+
+<p id="resultat" class="result"></p>
+
+</div>
+
+<div class="card">
+
+<h2>🤖 BOSS AI</h2>
+
+<p>Un espace pour apprendre à comprendre les données et les probabilités.</p>
+
+<button onclick="expliquer()">Découvrir</button>
+
+<p id="ia"></p>
+
+</div>
+
+<div class="card">
+
+<h2>📈 Nos objectifs</h2>
+
+<p>✓ Comprendre les statistiques</p>
+
+<p>✓ Apprendre les probabilités</p>
+
+<p>✓ Étudier les données passées</p>
+
+<p>✓ Développer son esprit d'analyse</p>
+
+</div>
+
+</main>
+
+<footer>
+
+© 2026 BOSS YOU - Tous droits réservés
+
+</footer>
+
+<script>
+
+function calculer(){
+
+ const f=Number(document.getElementById("favorable").value);
+
+ const t=Number(document.getElementById("total").value);
+
+ const r=document.getElementById("resultat");
+
+ if(!t || t<1 || f<0 || f>t){
+
+ r.textContent="Vérifie les nombres saisis.";
+
+ return;
+
+ }
+
+ r.textContent="Probabilité : "+(f/t*100).toFixed(2)+" %";
+
+}
+
+function expliquer(){
+
+ document.getElementById("ia").textContent=
+
+ "Une probabilité mesure la possibilité qu'un événement se produise. Elle ne garantit jamais un résultat futur.";
+
+}
+
+</script>
+
+</body>
+
+</html>
